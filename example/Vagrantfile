@@ -1,0 +1,13 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu18_04"
+
+  # Show VirtualBox UI Window on Launch
+  config.vm.provider "virtualbox" do |v|
+    v.gui = true
+    # The name to be used on Virtualbox - this should be something
+    # to make it easy to identify this project.
+    v.name = "vagrant-example"
+  end
+  # Add a bridged Ethernet adapter as well as the default NAT
+  config.vm.network "public_network"
+end
